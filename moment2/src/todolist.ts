@@ -65,6 +65,12 @@ export class ToDoList {
     return this.toDos;
   }
 
+  //tar bort todos från listan & loclStorage
+  clearList(): void {
+    this.toDos = [];
+    this.saveToLocalStorage();
+  }
+
   //sparar listan till localStorage
   saveToLocalStorage(): void {
     localStorage.setItem("toDos", JSON.stringify(this.toDos));
