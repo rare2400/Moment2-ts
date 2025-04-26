@@ -1,13 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Att göra-lista</title>
+</head>
+
+<body>
+  <header>
+    <h1>Att göra-lista</h1>
+  </header>
+
+  <div class="container">
+    <main>
+      <div class="form-container">
+        <h2>Lägg till att göra på listan</h2>
+        <p id="error"></p>
+        <form id="todo-form">
+          <label for="task">Att göra:</label>
+          <br>
+          <input type="text" name="task" id="task">
+          <br>
+          <label for="priority">Prioritet:</label>
+          <br>
+          <select id="priority">
+            <option value="0">-- Välj prioritet --</option>
+            <option value="1">Hög</option>
+            <option value="2">Mellan</option>
+            <option value="3">Låg</option>
+          </select>
+          <br>
+          <div class="btn-row">
+            <button type="submit" id="submit-btn">Lägg till</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="ul-container">
+        <h2>Att göra:</h2>
+        <ul id="todo-list"></ul>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <p>
+      Laborationsuppgift för kursen DT207G, <br> Backend-baserad webbutveckling <br>
+      Copyright &copy; 2025 Ramona Reinholdz
+    </p>
+  </footer>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
