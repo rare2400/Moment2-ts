@@ -16,6 +16,7 @@ const taskInput = document.getElementById("task") as HTMLInputElement;
 const priorityInput = document.getElementById("priority") as HTMLSelectElement;
 const todoUl = document.getElementById("todo-list") as HTMLUListElement;
 const errMessage = document.getElementById("error") as HTMLParagraphElement;
+const clearBtn = document.getElementById("clear-list") as HTMLButtonElement;
 
 //Funktion för att rendera todos i listan
 function renderToDos(): void {
@@ -47,7 +48,19 @@ function renderToDos(): void {
     todoUl.appendChild(li);
   });
 
+  //Visar "rensa"-knappen när alla todos är avklarade
+  if (toDos.every(todo => todo.completed)) {
+    clearBtn.style.display = "block";
+  } else {
+    clearBtn.style.display = "none";
+  }
 }
+
+//Eventlyssnare för rensa-lista-knappen
+clearBtn.addEventListener("click", () => {
+  todoList.clearList();
+  renderToDos();
+});
 
 //Eventlyssnare för formuläret
 form.addEventListener("submit", (event) => {
