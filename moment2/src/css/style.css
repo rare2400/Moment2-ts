@@ -42,14 +42,16 @@ select {
   width: 50%;
 }
 
-#submit-btn {
+#submit-btn,
+.clear-btn {
   background-color: #961f1f;
   color: white;
   padding: 0.5rem 3rem;
   border: none;
 }
 
-#submit-btn:hover {
+#submit-btn:hover,
+.clear-btn:hover {
   background-color: #510000;
   cursor: pointer;
 }
@@ -99,6 +101,13 @@ select {
 .complete-btn:hover {
   background-color: #0a2f00;
   cursor: pointer;
+}
+
+.clear-btn {
+  display: none;
+  grid-column: 1/3;
+  width: 50%;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 50rem) {
